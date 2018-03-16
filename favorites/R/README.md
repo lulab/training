@@ -1,6 +1,5 @@
-#
+# R
 
-Let's contribute together!
-Please share your nice code here, thanks.
+Nice scripts and code we contribute together.
 
 -- Lu Lab

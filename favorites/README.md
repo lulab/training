@@ -1,9 +1,7 @@
-#
-Upload Dir
+# Favorites
 
 ---
 
-Let's contribute together!
-Please share your nice code here, thanks.
+Favorite scripts and code will be selected and added here.
 
 -- Lu Lab
