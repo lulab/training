@@ -1,3 +1,4 @@
+# R script to find top100 differentially expressed genes by R package edgeR.
 ```
 counts <- read.table("HCC_ex_miRNA_primary.counts",header = T, sep = "\t")
 d<-counts[,4:23]
