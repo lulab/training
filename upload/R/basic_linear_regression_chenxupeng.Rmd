@@ -1,0 +1,165 @@
+#It is actually, one of my linear regression course homework. It includes some basic plots to analyze regression residuals and some calculations about confidence interval.
+#You should open it by RStudio and find it is well organized in Rmarkdown form. In Rmarkdown form we can combine programming languages including R/Python/Bash (by using insert button) and markdown form to write down equations elegently. You can use #some symbols of equation# to write mathematical symbols or use ## many equations## to add many equations together. You can see the equations you type instantly under the equation environment, so it is much more covenient to use Rmarkdown to write equations. You can even write down all your well-formatted paper and convert it to LaTeX as well.
+#you can run each cell to see the result, and you can define the output of the result(pdf_document or html_document), then click knit you can get the result, including all the results produces by codes.
+
+---
+title: "HW4"
+author:
+- name: Chen Xupeng
+  affiliation: 2014012882
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# 3.6
+```{r}
+hardness<- read.table('CH01PR22_947709365.txt')
+names(hardness) <- c("y","x")
+is.data.frame(hardness)
+hardness.fit <- lm(y~x,data=hardness)
+sumtable<-summary(hardness.fit)
+sumtable
+```
+
+## a
+```{r}
+boxplot(resid(hardness.fit),main="Box Plot of Hardness Data", ylab="Residuals")
+```
+The mean of residuals is zero
+
+## b 
+```{r}
+yhat <- fitted(hardness.fit); resid <- resid(hardness.fit)
+plot(yhat,resid,main="Plot of residuals against the fitted values Yhat", 
+     ylab="Residuals",xlab='yhat')
+```
+
+There is one residual equals to 5.575 a little higher than others.
+
+## c
+```{r}
+hardness.stdres = rstandard(hardness.fit)
+qqnorm(resid, 
+       ylab="Residuals", 
+       xlab="Expected", 
+       main=" Normal Probability Plot of Residuals") 
+qqline(resid)
+```
+
+
+```{r}
+StdErr = summary(hardness.fit)$sigma
+n = 16
+ExpVals = sapply(1:n, function(k) StdErr * qnorm((k-.375)/(n+.25)))
+cor(ExpVals,sort(resid))
+```
+With n=16, from Table B.6, the critical value for the coefficient of correlation between the ordered residuals and the expected values under normality when the distribution of error terms is normal using a 0.05 significance level is 0.941. Since 0.9916733 > 0.941, the assumption of normality appeared reasonable.
+
+
+# 4.5
+## a
+```{r}
+interval <- function(dat){
+  names(dat) <- c("y","x")
+  is.data.frame(dat)
+  data.fit <- lm(y~x,data=dat)
+  sumtable<-summary(data.fit)
+  coef <- sumtable$coefficients
+  signif<-1-(1-0.9)/4.0
+  tvalue <-qt(signif, 14)
+  beta_0 = list(coef[1]-tvalue*coef[3],coef[1]+tvalue*coef[3])
+  beta_1 = list(coef[2]-tvalue*coef[4],coef[2]+tvalue*coef[4])
+  return(list(beta_0,beta_1))
+}
+interval(hardness)
+```
+From R result, $b_0 = 168.6, s(b_0)=2.65702, b_1 = 2.03438, s(b_1)=0.09039.$ Since
+t(0.975, 14) = 2.145, Bonferroni joint confidence intervals for $β_0$ and $β_1$, using a 90% percent family confidence coefficient, are 168.6±2.145(2.65702) = [162.901, 174.299] for $β_0$ and 2.03438±2.145(0.09039) = [1.840, 2.228] for $β_1$. At least 90% of the time, both coefficients will be within the limits stated.
+
+## c
+The 90% joint confidence interval means that both will be in the interval at least 90% of the time.
+Restated, at least one of them will be out of the interval no more than 10% of the time. We cannot get more specific than this.
+
+# 4.9
+## a
+For Bonferroni, use $b_0+b_1X_j±t(1−0.1/6, 14)s\{\hat Y_h\}$, with t(1−.10/6, 14) = 2.35982.
+
+```{r}
+meaninterval <-function(X_h){
+mse <- mean(sumtable$residuals^2)
+sYh <- (mse * ( 1/16.0 + (X_h -ave(hardness$x)[1])**2/(sum((hardness$x - ave(hardness$x))**2)/16.0)) )**0.5
+beta_0 = coef[1]
+beta_1 = coef[3]
+list(beta_0 +beta_1*X_h - qt(1-.10/6, 14) * sYh,beta_0 +beta_1*X_h + qt(1-.10/6, 14) * sYh)
+}
+```
+
+Using this function we have CI of 20,30,40 are [215.1106，228.3704], [245.9163，250.7052], [265.1384，284.6236] respectively.
+
+The 90% joint confidence interval means that all three mean hardness will be in their respective interval at least 90% of the time.Restated, at least one of them will be out of the interval no more than 10% of the time. We cannot get more specific than this.
+
+# 4.12
+```{r}
+galleys.x <- c(7, 12, 10, 10, 14, 25, 30, 25, 18, 10, 4, 6)
+cost.y <- c(128, 213, 191, 178, 250 , 446, 540, 457, 324, 177, 75, 107)
+```
+
+## a
+```{r}
+typos.lm <- lm(cost.y~galleys.x-1)
+typos.lm
+```
+$$
+\hat Y_h=18.03X
+$$
+
+## b
+```{r}
+plot(galleys.x,cost.y,xlab= "Galleys", ylab="Cost")
+abline(typos.lm)
+```
+
+It appears that the model fits good
+
+## c
+```{r}
+historical.norm <- data.frame(galleys.x=1)
+alpha <- 0.02
+typos.int <- predict.lm(typos.lm, newdata = historical.norm , interval = "confidence", level = 1-alpha)
+typos.int
+```
+
+Alternatives: $H_0:E[Y]=β_{10}=17.50$ 
+
+$H_0:E[Y]≠β_{10}=17.50$  
+
+CI: $17.81226≤E[Y_h]≤18.24435$ 
+
+Decision rule:
+
+If $β_{10}$ falls within the confidence interval for $E[Y_h]$, conclude $H_0$; If $β_{10}$ does not fall within the confidence interval for $E[Y_h]$, conclude $H_A$ 
+
+Conclusion:
+
+Since 17.50<17.81226; therefore, accept $H_A$.
+
+## d
+```{r}
+newdata.galleys <- data.frame(galleys.x=10)
+typos.pred <- predict(typos.lm, newdata.galleys, level=0.98, interval = "predict", se.fit = TRUE)  
+typos.pred
+```
+
+$\hat Y_h=180.283$
+
+s[pred]=4.506806
+
+180.283±2.738769(4.506806)
+
+$167.8441≤Y_{h(new)}≤192.722$
+
+
