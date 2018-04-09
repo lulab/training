@@ -1,2 +1,0 @@
-一共尝试了六种不同的网络结构，选择了表现较好的参数，分别运行对应的run_mlp_*.py文件即可得到train_log与test_log。
-ipynb文件用于绘制loss、accuracy图像，查看运行时间等。
