@@ -1,0 +1,2 @@
+一共尝试了九种不同的参数组合，选择了比较好的一次，运行run_cnn.py文件即可得到train_log,test_log以及image。
+ipynb文件用于绘制loss、accuracy和输出层图像，查看运行时间等。
