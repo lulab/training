@@ -1,4 +1,4 @@
-# R script to find top100 differentially expressed genes by R package edgeR.
+# R script to find differentially expressed genes by R package edgeR.
 
 library(limma)
 library(edgeR)
