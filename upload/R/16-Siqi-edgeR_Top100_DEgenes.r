@@ -1,15 +1,39 @@
 # R script to find top100 differentially expressed genes by R package edgeR.
-```
-counts <- read.table("HCC_ex_miRNA_primary.counts",header = T, sep = "\t")
-d<-counts[,4:23]
-rownames(d)<-counts[,2]
-group<-factor(c("B","B","B","B","B","B","B","B","B","B","B","B","B","B","B","A","A","A","A","N"))
-design <-model.matrix(~group)
-d<-d[keep,,keep.lib.sizes=F]
-CPM<-cpm(d)
-write.csv(CPM,file="HCC_ex_miRNA_primary.cpm")
-CPM_matrix <-as.matrix(CPM)
-sample_color <-c(rep("#FF5733",15),rep("#FFC300",4),"#74C753")
-gene_color <-c(rep("#86c0e8",46),rep("#DAE4EB",14))
-heatmap.2(CPM, col=colorpanel(100,low = "white",high = "steelblue"), key = T, symkey = F, density.info = "none", trace = "none", cexRow = 1, cexCol = 1, srtCol = 45, ColSideColors = sample_color, RowSideColors = gene_color, scale = "row", keysize = 1, margins = c(5,10), dendrogram = c("both"))
-```
+
+library(limma)
+library(edgeR)
+
+d<-read.table("filtered_samples.30bin.B_N.remove_outlier.counts",header = T, sep = "\t")
+counts <- d[,2:42]
+rownames(counts)<-d[,1]
+keep <- rowSums(counts>=1)>=9
+counts <- counts[keep,]
+group<-c(rep("HCC",30),rep("Normal",11))
+
+DE_list <- DGEList(counts = counts,group = group)
+DE_list <- calcNormFactors(DE_list)
+
+design <- model.matrix(~group)
+design <- model.matrix(~0+group,data = DE_list$samples)
+colnames(design) <- levels(DE_list$samples$group)
+
+DE_list <- estimateDisp(DE_list,design)
+
+
+fit <- glmFit(DE_list,design)
+lrt <- glmLRT(fit,contrast = c(1,-1))
+FDR <- p.adjust(lrt$table$PValue, method="BH")
+padj_lrt <- cbind(lrt$table,FDR)
+write.csv(lrt$fitted.values,file = "edgeR_norm_value.csv",row.names = T)
+write.csv(padj_lrt,file = "edgeR_results.csv",row.names = T)
+
+FDR_0.05 = padj_lrt[padj_lrt$FDR < 0.05,]
+FDR_0.05$up_down = ifelse(FDR_0.05$logFC>0,"up","down")
+write.csv(FDR_0.05,file = "edgeR_FDR_0.05.csv",row.names = T)
+
+up_gene <- FDR_0.05[FDR_0.05$logFC >= 1,]
+down_gene <- FDR_0.05[FDR_0.05$logFC <= -1,]
+dim(up_gene)
+dim(down_gene)
+write.csv(up_gene,file = "edgeR_up.csv",row.names = T)
+write.csv(down_gene,file = "edgeR_down.csv",row.names = T)
