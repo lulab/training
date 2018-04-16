@@ -21,7 +21,7 @@ r_than_36nt;
         tail -6 $PATH0/log/${i}.bowtie2_remove_rRNA.pbs.err | grep 'exactly' | head -1 | awk 'BEGIN{FS=OFS=" "}{print $1}' >>./tmp/04.rRNA_reads_1;
         tail -6 $PATH0/log/${i}.bowtie2_remove_rRNA.pbs.err | grep '>1' | head -1 | awk 'BEGIN{FS=OFS=" "}{print $1}' >>./tmp/04.rRNA_reads_n;
         paste -d "\t" ./tmp/04.rRNA_reads_1 ./tmp/04.rRNA_reads_n | awk 'total=(($1+$2)){print total}' >./tmp/04.rRNA_reads;
-        paste ./tmp/04.rRNA_reads ./05.Kept_reads | awk 'ratio=(($1/$2*100)){printf("%.2f\n",ratio)}' | sed 's/$/%/g' | paste -d "\t" ./tmp/04.rRNA_reads - >04.rRNA;
+        paste ./tmp/04.rRNA_reads ./03.Clean_reads | awk 'ratio=(($1/$2*100)){printf("%.2f\n",ratio)}' | sed 's/$/%/g' | paste -d "\t" ./tmp/04.rRNA_reads - >04.rRNA;
 
 
         tail -6 $PATH0/log/${i}.bowtie2_mapping_hg38.pbs.err | grep 'exactly' | head -1 | awk 'BEGIN{FS=OFS=" "}{print $1}' >>./tmp/06.hg38_reads_1;
