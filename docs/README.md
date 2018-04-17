@@ -1,7 +1,3 @@
-# Documents of Bioinfo Traning
-## Shared code by the Bioinfo Training Program @ Lu Lab
-This is a test.
+# Shared Scripts and Documents of Bioinfo Traning @ Lu Lab
 
-
----
-You can copy/paste tables using https://www.tablesgenerator.com/markdown_tables
+You will need to request a permission the view/edit this github project.
