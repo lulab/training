@@ -1,7 +1,13 @@
 # Bioinfo Training Program @ Lu Lab
 
-## [Public Tutorial](https://www.gitbook.com/book/lulab/bioinfo-training)
+### [Public Tutorial](https://www.gitbook.com/book/lulab/bioinfo-training)
 
+### Public Scripts/Code
+
+* Shared by [PI:Zhi John Lu](https://lulab.github.io/PI)
+* Shared by Ph.D.:Yang Li
+* Shared by Ph.D.:Binbin Shi
+* Shared by Ph.D.:Siqi Wang
 
 ---
 
