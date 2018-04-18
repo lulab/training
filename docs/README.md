@@ -7,7 +7,6 @@
 * Shared by [PI:Zhi John Lu](https://lulab.github.io/PI)
 * Shared by Ph.D.:Yang Li
 * Shared by Ph.D.:Binbin Shi
-* Shared by Ph.D.:Siqi Wang
 
 ---
 
