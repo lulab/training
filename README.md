@@ -1,8 +1,16 @@
 # training
 
-Shared scripts/code in the Bioinfo Training Program. 
+Shared scripts/code/data in the Bioinfo Training Program. 
 
-See detailed **documents of training** in the [wiki page](https://github.com/lulab/training/wiki)
+| DIR | format | Projects | Admin | Local Dir |
+| :--- | :--- | :--- | :--- | :-- |
+| [documents](https://github.com/lulab/training/wiki) | wiki | training | 旭鹏 | - |
+| scripts | * |intranet/training | 李洋、斌斌 | BioII/lulab_b/shared/scripts/ |
+| genomes | fasta, index, gtf/gff | intranet/training | 李洋 | BioII/lulab_b/shared/genomes/ |
+| projet1-exRNA: data + metadata| fastq, bam, bed + google sheet, tsv/md? | **exRNA** | 思琦 + 李洋 | BioII/lulab_b/shared/projects/exRNA |
+| persons |  | github links of individual persons | individual person | - |
+| upload | | uploaded scripts by learners | individual person | - |
+
 
 
 ---
