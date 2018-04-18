@@ -7,4 +7,5 @@ See detailed **documents of training** in the [wiki page](https://github.com/lul
 
 ---
 * [Markdown Syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-* [Excel Table -> Markdown](https://www.tablesgenerator.com/markdown_tables)
+* [Excel Table to Markdown](https://www.tablesgenerator.com/markdown_tables)
+* [Paste to Markdown](https://euangoddard.github.io/clipboard2markdown/)
