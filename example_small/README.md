@@ -5,14 +5,16 @@
 #### location: cnode:/BioII/lulab_b/shared/projects/exRNA/hcc_examples/
 
 #### Metatable:
-*       Sample_ID: the patient sample were named as xxxxx-B (before surgery) and xxxxx-A (after surgery), respectively
-*       Stage: the development stage of HCC, from level A to C
-*       Sex: M / F
-*       Age: Age by sampling time
-*       DNase1: treat with DNase or not
-*       Spike.in: used or not
-*       Used.plasma.ml: the volume of used plasma
-*       RNA.conc.ng.μ.l: the concentration of RNA
-*       RNA.mass.ng: the quality of used RNA
-*       Seq_date: the date of getting sequencing data
-*       notes: other informations
+| Column | Description |
+| ------------- |:-------------:|
+| Sample_ID: | the patient sample were named as xxxxx-B (before surgery) and xxxxx-A (after surgery), respectively |
+| Stage: | the development stage of HCC, from level A to C |
+| Sex: | M / F |
+| Age: | Age by sampling time |
+| DNase1: | treat with DNase or not |
+| Spike.in: | used or not |
+| Used.plasma.ml: | the volume of used plasma |
+| RNA.conc.ng.μ.l: | the concentration of RNA |
+| RNA.mass.ng: | the quality of used RNA |
+| Seq_date: | the date of getting sequencing data |
+| notes: | other informations |
