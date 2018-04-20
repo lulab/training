@@ -1,21 +1,20 @@
 # Bioinfo Training Program @ Lu Lab
 
-## [Public Tutorial](https://www.gitbook.com/book/lulab/bioinfo-training)
+## [Tutorial](https://www.gitbook.com/book/lulab/bioinfo-training)
 
-### Public Scripts/Code
+## Scripts and Documents for the training program
+
+* [scripts/code](https://github.com/lulab/training)
+* [documents**](https://github.com/lulab/training/wiki)
+
+You will need to request a permission to view/edit this internal github project.
+
+## Other Scripts and Code
 
 * Shared by [PI:Zhi John Lu](https://lulab.github.io/PI)
 * Shared by Ph.D.:Yang Li
 * Shared by Ph.D.:Binbin Shi
 
----
-
-### Internal Scripts and Documents
-
-* Internal [**scripts/code**](https://github.com/lulab/training)
-* Internal [**documents**](https://github.com/lulab/training/wiki)
-
-You will need to request a permission to view/edit this internal github project.
 
 ---
 
