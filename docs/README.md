@@ -4,13 +4,13 @@
 
 ## Scripts and Documents for the training program
 
-* [scripts/code](https://github.com/lulab/training)
-* [documents](https://github.com/lulab/training/wiki)
+* [scripts/code](https://github.com/urluzhi/training)
+* [documents](https://github.com/urluzhi/training/wiki)
 
 
 ## Other Scripts and Code
 
-* Shared by [PI:Zhi John Lu](https://lulab.github.io/PI)
+* Shared by [PI:Zhi John Lu](https://urluzhi.github.io)
 * Shared by Ph.D.:Yang Li
 * Shared by Ph.D.:Binbin Shi
 
