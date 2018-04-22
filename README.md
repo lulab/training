@@ -1,6 +1,14 @@
-# training
+# Bioinfo Training Program @ Lu Lab
 
-DIRs on github
+## [Tutorial](https://www.gitbook.com/book/lulab/bioinfo-training)
+
+## Scripts and Documents for the training program
+
+* [documents](https://github.com/lulab/training/wiki)
+* [scripts/code](https://github.com/lulab/training)
+
+
+### DIRs on github
 
 | DIR | format | Projects | Admin | cnode Dir |
 | :--- | :--- | :--- | :--- | :-- |
@@ -12,6 +20,11 @@ DIRs on github
 | persons | | personal github links | individual person | - |
 
 
+## Other Scripts and Code
+
+* Shared by [PI:Zhi John Lu](https://urluzhi.github.io/scripts)
+* Shared by Ph.D.:Yang Li
+* Shared by Ph.D.:Binbin Shi
 
 ---
 > [Markdown Syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
