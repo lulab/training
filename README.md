@@ -1,6 +1,6 @@
 # Bioinfo Training Program @ Lu Lab
 
-## [Tutorial](https://www.gitbook.com/book/lulab/bioinfo-training)
+## [Tutorial](https://lulab.gitbook.io/training)
 
 ## Scripts and Documents for the training program
 
