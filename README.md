@@ -10,6 +10,16 @@
 * [documents](https://github.com/lulab/training/wiki)
 * [scripts/code](https://github.com/lulab/training)
 
+**DIRs**
+
+| DIR | format | Projects | Admin |
+| :--- | :--- | :--- | :--- | 
+| [shared_scripts](https://lulab.github.io/shared_scripts) | * |intranet/training | 李洋 + 斌斌 |
+| genomes/ | fasta, index, gtf/gff | intranet/training | 
+| proj_exRNA/ | example files | exRNA | 李洋 |
+| assets/ | * | files for wiki and gitbook | - | 
+| upload/ | * | uploaded scripts | individual person | - |
+
 
 
 ## Program Summary
@@ -26,17 +36,6 @@
 * Design: 从零基础开始，直到基本机器学习方法，如Feature Selection，的熟练掌握。
 
 
-
-## DIRs on github
-
-| DIR | format | Projects | Admin | cnode Dir |
-| :--- | :--- | :--- | :--- | :-- |
-| documents | wiki | training | 旭鹏 | - |
-| assets | * | files for wiki and gitbook | - | - |
-| scripts | * |intranet/training | 李洋 + 斌斌 | BioII/lulab_b/shared/scripts/ |
-| genomes | fasta, index, gtf/gff | intranet/training | 李洋 + 思琦 | BioII/lulab_b/shared/genomes/ |
-| proj_exRNA: data + metadata| fastq, bam, bed + google sheet, tsv/md? | exRNA | 李洋 | BioII/lulab_b/shared/projects/exRNA/ |
-| upload | | uploaded scripts | individual person | - |
 
 
 ## Other Scripts and Code
