@@ -2,13 +2,14 @@
 
 ## [Tutorial](https://lulab.gitbook.io/training)
 
-## Scripts and Documents for the training program
+* ✅[to-do](https://github.com/lulab/training/projects/1?fullscreen=true)
+* ❗️[issues](https://github.com/lulab/training/issues)
 
-* 🚩[to-do](https://github.com/lulab/training/projects/1?fullscreen=true)
+## Scripts and Documents for the training program
 
 * [documents](https://github.com/lulab/training/wiki)
 * [scripts/code](https://github.com/lulab/training)
-* [issues](https://github.com/lulab/training/issues)
+
 
 
 ## Program Summary
