@@ -4,9 +4,10 @@
 
 ## Scripts and Documents for the training program
 
+* 🚩[to-do](https://github.com/lulab/training/projects/1?fullscreen=true)
+
 * [documents](https://github.com/lulab/training/wiki)
 * [scripts/code](https://github.com/lulab/training)
-* [to-do](https://github.com/lulab/training/projects/1?fullscreen=true)
 * [issues](https://github.com/lulab/training/issues)
 
 
