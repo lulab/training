@@ -7,7 +7,7 @@
 
 ## Scripts and Documents for the training program
 
-* [documents](https://github.com/lulab/training/wiki)
+* [wiki/documents](https://github.com/lulab/training/wiki)
 * [scripts/code](https://github.com/lulab/training)
 
 **DIRs**
