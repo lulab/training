@@ -32,11 +32,11 @@
 | DIR | format | Projects | Admin | cnode Dir |
 | :--- | :--- | :--- | :--- | :-- |
 | documents | wiki | training | 旭鹏 | - |
+| assets | * | files for wiki and gitbook | - | - |
 | scripts | * |intranet/training | 李洋 + 斌斌 | BioII/lulab_b/shared/scripts/ |
 | genomes | fasta, index, gtf/gff | intranet/training | 李洋 + 思琦 | BioII/lulab_b/shared/genomes/ |
-| projets/exRNA: data + metadata| fastq, bam, bed + google sheet, tsv/md? | exRNA | 思琦 + 李洋 | BioII/lulab_b/shared/projects/exRNA/ |
+| proj_exRNA: data + metadata| fastq, bam, bed + google sheet, tsv/md? | exRNA | 李洋 | BioII/lulab_b/shared/projects/exRNA/ |
 | upload | | uploaded scripts | individual person | - |
-| persons | | personal github links | individual person | - |
 
 
 ## Other Scripts and Code
