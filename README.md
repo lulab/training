@@ -14,9 +14,9 @@
 
 | DIR | format | Projects | Admin |
 | :--- | :--- | :--- | :--- | 
-| [shared_scripts](https://lulab.github.io/shared_scripts) | * |intranet/training | 李洋 + 斌斌 |
+| [shared_scripts](https://lulab.github.io/shared_scripts) | * |intranet/training | - |
 | genomes/ | fasta, index, gtf/gff | intranet/training | 
-| proj_exRNA/ | example files | exRNA | 李洋 |
+| proj_exRNA/ | example files | exRNA | - |
 | assets/ | * | files for wiki and gitbook | - | 
 | upload/ | * | uploaded scripts | individual person | 
 
