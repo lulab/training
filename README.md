@@ -12,13 +12,13 @@
 
 **DIRs**
 
-| DIR | format | Projects | Admin |
+| DIR | Format | Project | Person |
 | :--- | :--- | :--- | :--- | 
-| [shared_scripts](https://lulab.github.io/shared_scripts) | * |intranet/training | - |
-| genomes/ | fasta, index, gtf/gff | intranet/training | 
-| proj_exRNA/ | example files | exRNA | - |
-| assets/ | * | files for wiki and gitbook | - | 
-| upload/ | * | uploaded scripts | individual person | 
+| [shared_scripts](https://lulab.github.io/shared_scripts) | * |intranet/training | Admin |
+| genomes/ | fasta, index, gtf/gff | intranet/training | Admin |
+| proj_exRNA/ | example files | exRNA | Admin |
+| assets/ | * | files for wiki and gitbook | Admin | 
+| upload/ | * | uploaded scripts | ALL | 
 
 
 
