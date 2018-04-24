@@ -18,7 +18,7 @@
 | genomes/ | fasta, index, gtf/gff | intranet/training | 
 | proj_exRNA/ | example files | exRNA | 李洋 |
 | assets/ | * | files for wiki and gitbook | - | 
-| upload/ | * | uploaded scripts | individual person | - |
+| upload/ | * | uploaded scripts | individual person | 
 
 
 
