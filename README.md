@@ -5,7 +5,7 @@
 * ✅ [to-do](https://github.com/lulab/training/projects/1?fullscreen=true)
 * ❗️ [issues](https://github.com/lulab/training/issues)
 
-## ✏️ Scripts and Documents for the training program
+## Scripts and Documents for the training program
 
 * [wiki/documents](https://github.com/lulab/training/wiki)
 * [scripts/code](https://github.com/lulab/training)
@@ -36,7 +36,7 @@
 
 
 
-## 💾 Other Scripts and Code
+## Other Scripts and Code
 
 * Shared by [PI:Zhi John Lu](https://urluzhi.github.io/scripts)
 * Shared by Ph.D.:Yang Li
