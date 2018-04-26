@@ -5,7 +5,7 @@
 ```
 pip install plotly
 ```
-可使用jupyter notebook打开.ipynb文件，逐个代码框运行即可查看表格和绘图。
+可使用jupyter notebook打开.ipynb文件，逐个代码框运行即可查看表格和绘图，直接在github上查看时无法看到animation和用plotly绘制的图片。
 
 ## 步骤
 ### 表格处理
@@ -21,5 +21,5 @@ pip install plotly
 
 可以发现几种方法各有优劣，对数据进行了不同维度的展示，其中plotly的交互方式非常先进，可以用鼠标查看更多数据的细节。
 
-
+<link rel="stylesheet" type="text/css" href="auto-number-title.css" />
 
