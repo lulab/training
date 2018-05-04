@@ -43,4 +43,4 @@ STAR --runMode genomeGenerate --runThreadN 15 --genomeDir STAR_hg38_index/ --gen
 ```
 
 ## Annotaions
-#### see README.md in folder: anno/
+#### see README.md in folder: anno/[README.md](https://github.com/lulab/training/blob/master/genomes/anno/README.md)
