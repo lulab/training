@@ -1,13 +1,15 @@
 # Annotation files for genome hg38
-##provider: GENCODE and other projects
-##format: gtf and gff
+## provider: GENCODE and other projects
+## format: gtf and gff
 ## Date: May 4, 2018
 ## Maintainer: Yang Li
 ## local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 
 
 ## statistics
+
 | **RNA_type** | **gene_num** | **transcrips_num** | **source** | **file** |
+| ------------ |:------------:| ------------------:| ----------:|---------:|
 | rRNA  | 544 | 544 | Gencode27 | rRNA.gencode27.gtf / rRNA.gencode27.gff |
 | miRNA | 1,881 | 1,881 | Gencode27 | miRNA.gencode27.gtf / miRNA.gencode27.gff |
 | piRNA | 812,347 | 812,347 | piRBase | piRNA.piRBase.hg38.gtf / piRNA.piRBase.hg38.gff |
@@ -24,6 +26,7 @@
 
 ## pre-process annotaion
 ### download gencode v27 annotations
+
 ```
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/gencode.v27.annotation.gtf.gz
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/gencode.v27.annotation.gff3.gz
@@ -34,6 +37,7 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/gencode.
 ```
 
 #### parse annotations
+
 ```
 gtf=gencode.v27.annotation.gtf
 for i in rRNA snRNA snoRNA srpRNA miRNA vaultRNA Y_RNA; do
@@ -61,10 +65,12 @@ mv gencode.v27.annotation.gff3 gencode.v27.annotation.gff
 ### download piRNA from piRBase
 
 ### downlaod lncRNA from NONCODE(http://www.noncode.org/), mitranscriptome(http://mitranscriptome.org/), and Yang Yang's NC paper
+
 ```
 wget http://mitranscriptome.org/download/mitranscriptome.gtf.tar.gz
 wget http://www.noncode.org/datadownload/NONCODEv5_human_hg38_lncRNA.gtf.gz
 wget https://media.nature.com/original/nature-assets/ncomms/2017/170213/ncomms14421/extref/ncomms14421-s3.txt
+```
 
 #### parse and convert
 ```
@@ -86,6 +92,7 @@ mv NONCODEv5_human_hg38_lncRNA.gtf lncRNA.NONCODEv5.hg38.gtf
 ```
 
 ### merge lncRNA annotations
+
 ```
 gffcompare -o merged_lncRNA -s ../sequence/GRCh38.p12.genome.fa lncRNA.NONCODEv5.hg38.gtf  lncRNA.mitranscriptome.v2.hg38.gtf  lncRNA.gencode27.gtf lncRNA.lulab_ncomms14421.hg38.gtf
 gffread -E merged_lncRNA.combined.gtf -o- > merged_lncRNA.combined.gff
@@ -93,26 +100,34 @@ gffread -E merged_lncRNA.combined.gtf -o- > merged_lncRNA.combined.gff
 
 ### cut lncRNA into bins
 ####convert combined gtf to combined bed
+```
 gffread --bed merged_lncRNA.combined.gtf -o merged_lncRNA.combined.bed
-
+```
 ####grep the longest transciprt for each lncRNA gene and calculate its length
+```
 awk 'NR==FNR {split($10,m,"\"");split($12,n,"\"");D[m[2]]=n[2]} \
 NR>FNR {split($11,ex,",");for (k in ex) len[$4]+=ex[k]; b[D[$4]] = len[$4] > a[D[$4]] ? $4 : b[D[$4]]; a[D[$4]] = len[$4] > a[D[$4]] ? len[$4] : a[D[$4]] } \
 END { OFS = "\t"; for(x in a) print x, a[x],b[x]}' merged_lncRNA.combined.gtf merged_lncRNA.combined.bed >merged_lncRNA.combined.longest.tran
-
+```
 ####grep the exons of the longest transciprts
+```
 awk '{print $3}' merged_lncRNA.combined.longest.tran| grep -Ff - merged_lncRNA.combined.gtf|awk '$3=="exon"' >merged_lncRNA.combined.longest.exon.gtf
-
+```
 ####cut full length lncRNA transcripts into bins: bin_size_30, step_size_15
 #### (1)deal with transcirpts longer than 30bp
+```
 awk 'BEGIN{ OFS="\t" } ($5-$4)>30 {split($10,a,"\""); \
 for(i=0;i<=($5-$4-30)/15;i++) {print $1,$4+i*15, $4+i*15+30,a[2]"__"$4+i*15"__"$4+i*15+30,$6,$7} \
 print $1, $4+(i+1)*15,$5,a[2]"__"$4+(i+1)*15"__"$5,$6,$7}' \
 merged_lncRNA.combined.longest.exon.gtf |awk '$3>$2' >merged_lncRNA.combined.longest.exon.bin30.bed
+```
 
 #### (2)deal with transcirpts no longer than 30bp
+```
 awk 'BEGIN{ OFS="\t" } ($5-$4)<=30 {split($10,a,"\"");print $1,$4,$5,a[2]"__"$4"__"$5,$6,$7}' \
 merged_lncRNA.combined.longest.exon.gtf >shorterthan30.bed
-
+```
 #### (3)concatenate two bed files generated abovely
+````
 cat merged_lncRNA.combined.longest.exon.bin30.bed shorterthan30.bed|sort -k1,1 -k2,2n -k3,3 >merged_lncRNA.combined.longest.exon.bin30.all.bed
+```
