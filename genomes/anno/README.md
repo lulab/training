@@ -13,7 +13,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 ## statistics
 
 | **RNA_type** | **gene_num** | **transcrips_num** | **source** | **file** |
-| ------- |:-------:| ------:| -----:|---------:|
+| :------- |:-------|:------|:-----|:---------|
 | rRNA  | 544 | 544 | Gencode27 | rRNA.gencode27.gtf / rRNA.gencode27.gff |
 | miRNA | 1,881 | 1,881 | Gencode27 | miRNA.gencode27.gtf / miRNA.gencode27.gff |
 | piRNA | 812,347 | 812,347 | piRBase | piRNA.piRBase.hg38.gtf / piRNA.piRBase.hg38.gff |
@@ -24,7 +24,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | lncRNA | 15,778 | 27,908 | Gencode27(lincRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff |
 | lncRNA | 96,308 | 172,216 | NONCODEv5 | lncRNA.NONCODEv5.hg38.gtf / lncRNA.NONCODEv5.hg38.gff |
 | lncRNA | 90,624 | 377,402 | mitranscritome | lncRNA.mitranscriptome.v2.hg38.gtf / lncRNA.mitranscriptome.v2.hg38.gff |
-| lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff |
+| lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff |
 | mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff |
 | allGenes | 58,288 | 200401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff |
 
