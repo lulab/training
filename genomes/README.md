@@ -8,7 +8,7 @@ Date: May 4, 2018
 
 Maintainer: Yang Li
 
-## genome hg38
+## Sequence
 ### download from gencode v27
 #### located in folder: sequence/
 
@@ -23,10 +23,11 @@ samtools faidx GRCh38.p10.genome.fa
 faidx GRCh38.p10.genome.fa -i chromsizes > hg38.chrom.sizes
 ```
 
-## genome index build by bowtie2 and STAR
+## Index 
+#### build by bowtie2 and STAR
 #### located in folder: index
 
 
 
-## annotaions for hg38
+## Annotaions
 #### see README.md in folder: anno/
