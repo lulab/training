@@ -13,7 +13,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 ## statistics
 
 | **RNA_type** | **gene_num** | **transcrips_num** | **source** | **file** |
-| ------------ |:------------:| ------------------:| ----------:|---------:|
+| ------- |:-------:| ------:| -----:|---------:|
 | rRNA  | 544 | 544 | Gencode27 | rRNA.gencode27.gtf / rRNA.gencode27.gff |
 | miRNA | 1,881 | 1,881 | Gencode27 | miRNA.gencode27.gtf / miRNA.gencode27.gff |
 | piRNA | 812,347 | 812,347 | piRBase | piRNA.piRBase.hg38.gtf / piRNA.piRBase.hg38.gff |
