@@ -1,9 +1,9 @@
 # Annotation files for genome hg38
-## provider: GENCODE and other projects
-## format: gtf and gff
-## Date: May 4, 2018
-## Maintainer: Yang Li
-## local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
+provider: GENCODE and other projects
+format: gtf and gff
+Date: May 4, 2018
+Maintainer: Yang Li
+local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 
 
 ## statistics
@@ -128,6 +128,6 @@ awk 'BEGIN{ OFS="\t" } ($5-$4)<=30 {split($10,a,"\"");print $1,$4,$5,a[2]"__"$4"
 merged_lncRNA.combined.longest.exon.gtf >shorterthan30.bed
 ```
 #### (3)concatenate two bed files generated abovely
-````
-cat merged_lncRNA.combined.longest.exon.bin30.bed shorterthan30.bed|sort -k1,1 -k2,2n -k3,3 >merged_lncRNA.combined.longest.exon.bin30.all.bed
+```
+cat merged_lncRNA.combined.longest.exon.bin30.bed shorterthan30.bed|sort -k1,1 -k2,2n -k3,3 > merged_lncRNA.combined.longest.exon.bin30.all.bed
 ```
