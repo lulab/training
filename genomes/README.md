@@ -13,7 +13,7 @@ Maintainer: Yang Li
 #### located in folder: sequence/
 
 ```
-wget wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/GRCh38.p10.genome.fa.gz
+wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/GRCh38.p10.genome.fa.gz
 ```
 
 #### parse genome
