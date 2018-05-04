@@ -103,21 +103,21 @@ gffread -E merged_lncRNA.combined.gtf -o- > merged_lncRNA.combined.gff
 ```
 
 ### cut lncRNA into bins
-####convert combined gtf to combined bed
+#### convert combined gtf to combined bed
 ```
 gffread --bed merged_lncRNA.combined.gtf -o merged_lncRNA.combined.bed
 ```
-####grep the longest transciprt for each lncRNA gene and calculate its length
+#### grep the longest transciprt for each lncRNA gene and calculate its length
 ```
 awk 'NR==FNR {split($10,m,"\"");split($12,n,"\"");D[m[2]]=n[2]} \
 NR>FNR {split($11,ex,",");for (k in ex) len[$4]+=ex[k]; b[D[$4]] = len[$4] > a[D[$4]] ? $4 : b[D[$4]]; a[D[$4]] = len[$4] > a[D[$4]] ? len[$4] : a[D[$4]] } \
 END { OFS = "\t"; for(x in a) print x, a[x],b[x]}' merged_lncRNA.combined.gtf merged_lncRNA.combined.bed >merged_lncRNA.combined.longest.tran
 ```
-####grep the exons of the longest transciprts
+#### grep the exons of the longest transciprts
 ```
 awk '{print $3}' merged_lncRNA.combined.longest.tran| grep -Ff - merged_lncRNA.combined.gtf|awk '$3=="exon"' >merged_lncRNA.combined.longest.exon.gtf
 ```
-####cut full length lncRNA transcripts into bins: bin_size_30, step_size_15
+#### cut full length lncRNA transcripts into bins: bin_size_30, step_size_15
 #### (1)deal with transcirpts longer than 30bp
 ```
 awk 'BEGIN{ OFS="\t" } ($5-$4)>30 {split($10,a,"\""); \
