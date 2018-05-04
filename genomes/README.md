@@ -20,14 +20,27 @@ wget wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/GRC
 
 ```
 samtools faidx GRCh38.p10.genome.fa
-faidx GRCh38.p10.genome.fa -i chromsizes > hg38.chrom.sizes
+cut -f1,2 GRCh38.p10.genome.fa.fai > hg38.chrom.sizes
 ```
 
 ## Index 
 #### build by bowtie2 and STAR
-#### located in folder: index
+#### located in folder: index/
 
+using bowtie2
 
+```
+mkdir bowtie2_hg38_index
+cd bowtie2_hg38_index
+bowtie2-build ../sequence/GRCh38.p10.genome.fa GRCh38.p10
+```
+
+using STAR
+
+```
+mkdir STAR_hg38_index
+STAR --runMode genomeGenerate --runThreadN 15 --genomeDir STAR_hg38_index/ --genomeFastaFiles GRCh38.p10.genome.fa
+```
 
 ## Annotaions
 #### see README.md in folder: anno/
