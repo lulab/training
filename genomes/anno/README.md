@@ -1,8 +1,12 @@
 # Annotation files for genome hg38
 provider: GENCODE and other projects
+
 format: gtf and gff
+
 Date: May 4, 2018
+
 Maintainer: Yang Li
+
 local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 
 
