@@ -26,7 +26,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | lncRNA | 90,624 | 377,402 | mitranscritome | lncRNA.mitranscriptome.v2.hg38.gtf / lncRNA.mitranscriptome.v2.hg38.gff |
 | lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff |
 | mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff |
-| allGenes | 58,288 | 200401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff |
+| allGenes | 58,288 | 200,401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff |
 
 ## pre-process annotaion
 ### download gencode v27 annotations
