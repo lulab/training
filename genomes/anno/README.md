@@ -24,8 +24,8 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | lncRNA | 15,778 | 27,908 | Gencode27(lincRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
 | lncRNA | 96,308 | 172,216 | NONCODEv5 | lncRNA.NONCODEv5.hg38.gtf / lncRNA.NONCODEv5.hg38.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
 | lncRNA | 90,624 | 377,402 | mitranscritome | lncRNA.mitranscriptome.v2.hg38.gtf / lncRNA.mitranscriptome.v2.hg38.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
-| lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
-| mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
+| lncRNA | 136,464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
+| mRNA | 19,836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
 | allGenes | 58,288 | 200,401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
 
 ## bin statistics
