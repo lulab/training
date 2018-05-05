@@ -19,7 +19,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | piRNA | 812,347 | 812,347 | piRBase | piRNA.piRBase.hg38.gtf / piRNA.piRBase.hg38.gff | 2018.5.4 | [D/D](#download-piRNA-from-piRBase) ||
 | snoRNA | 943 | 955 | Gencode27(misc_RNA) | snoRNA.gencode27.gtf / snoRNA.gencode27.gtf | 2018.5.4 | [P/P](#parse-annotations) ||
 | snRNA | 1,900 | 1,900 | Gencode27 | snRNA.gencode27.gtf / snRNA.gencode27.gtf | 2018.5.4 | [P/P](#parse-annotations) ||
-| srpRNA | 680 | 682 | Gencode27(misc_RNA) | srpRNA.gencode27.gtf / srpRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
+| srpRNA | 680 | 680 | Gencode27(misc_RNA) | srpRNA.gencode27.gtf / srpRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
 | tRNA | 649 | 649 | Gencode27(predicted tRNA) | tRNA.gencode27.gtf / tRNA.gencode27.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
 | lncRNA | 15,778 | 27,908 | Gencode27(lincRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
 | lncRNA | 96,308 | 172,216 | NONCODEv5 | lncRNA.NONCODEv5.hg38.gtf / lncRNA.NONCODEv5.hg38.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
@@ -28,7 +28,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
 | allGenes | 58,288 | 200,401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
 
-## gtf/gff statistics
+## bin statistics
 
 | **RNA_type** | **source** | **file** | **Date** | **Download/Processed** | **Note** |
 | :------- |:-----|:---------|:-----|:-----|:------|
