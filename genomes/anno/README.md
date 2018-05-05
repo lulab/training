@@ -12,21 +12,21 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 
 ## statistics
 
-| **RNA_type** | **gene_num** | **transcrips_num** | **source** | **file** |
-| :------- |:-------|:------|:-----|:---------|
-| rRNA  | 544 | 544 | Gencode27 | rRNA.gencode27.gtf / rRNA.gencode27.gff |
-| miRNA | 1,881 | 1,881 | Gencode27 | miRNA.gencode27.gtf / miRNA.gencode27.gff |
-| piRNA | 812,347 | 812,347 | piRBase | piRNA.piRBase.hg38.gtf / piRNA.piRBase.hg38.gff |
-| snoRNA | 943 | 955 | Gencode27(misc_RNA) | snoRNA.gencode27.gtf / snoRNA.gencode27.gtf |
-| snRNA | 1,900 | 1,900 | Gencode27 | snRNA.gencode27.gtf / snRNA.gencode27.gtf |
-| srpRNA | 680 | 682 | Gencode27(misc_RNA) | srpRNA.gencode27.gtf / srpRNA.gencode27.gff |
-| tRNA | 649 | 649 | Gencode27(predicted tRNA) | tRNA.gencode27.gtf / tRNA.gencode27.gff |
-| lncRNA | 15,778 | 27,908 | Gencode27(lincRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff |
-| lncRNA | 96,308 | 172,216 | NONCODEv5 | lncRNA.NONCODEv5.hg38.gtf / lncRNA.NONCODEv5.hg38.gff |
-| lncRNA | 90,624 | 377,402 | mitranscritome | lncRNA.mitranscriptome.v2.hg38.gtf / lncRNA.mitranscriptome.v2.hg38.gff |
-| lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff |
-| mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff |
-| allGenes | 58,288 | 200,401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff |
+| **RNA_type** | **gene_num** | **transcrips_num** | **source** | **file** | **Date** | **Download/Processed** | **Note** |
+| :------- |:-------|:------|:-----|:---------|:-----|:-----|:------|
+| rRNA  | 544 | 544 | Gencode27 | rRNA.gencode27.gtf / rRNA.gencode27.gff | 2018.5.4 | [P/P](#parse annotations) | 
+| miRNA | 1,881 | 1,881 | Gencode27 | miRNA.gencode27.gtf / miRNA.gencode27.gff | 2018.5.4 | P/P |
+| piRNA | 812,347 | 812,347 | piRBase | piRNA.piRBase.hg38.gtf / piRNA.piRBase.hg38.gff | 2018.5.4 | P/P |
+| snoRNA | 943 | 955 | Gencode27(misc_RNA) | snoRNA.gencode27.gtf / snoRNA.gencode27.gtf | 2018.5.4 | P/P |
+| snRNA | 1,900 | 1,900 | Gencode27 | snRNA.gencode27.gtf / snRNA.gencode27.gtf | 2018.5.4 | P/P |
+| srpRNA | 680 | 682 | Gencode27(misc_RNA) | srpRNA.gencode27.gtf / srpRNA.gencode27.gff | 2018.5.4 | P/P |
+| tRNA | 649 | 649 | Gencode27(predicted tRNA) | tRNA.gencode27.gtf / tRNA.gencode27.gff | 2018.5.4 | P/P |
+| lncRNA | 15,778 | 27,908 | Gencode27(lincRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff | 2018.5.4 | D/D |
+| lncRNA | 96,308 | 172,216 | NONCODEv5 | lncRNA.NONCODEv5.hg38.gtf / lncRNA.NONCODEv5.hg38.gff | 2018.5.4 | P/P |
+| lncRNA | 90,624 | 377,402 | mitranscritome | lncRNA.mitranscriptome.v2.hg38.gtf / lncRNA.mitranscriptome.v2.hg38.gff | 2018.5.4 | P/P |
+| lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff | 2018.5.4 | P/P |
+| mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff | 2018.5.4 | P/P |
+| allGenes | 58,288 | 200,401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff | 2018.5.4 | D/D |
 
 ## pre-process annotaion
 ### download gencode v27 annotations
