@@ -10,7 +10,7 @@ Maintainer: Yang Li
 local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 
 
-## statistics
+## gtf/gff statistics
 
 | **RNA_type** | **gene_num** | **transcrips_num** | **source** | **file** | **Date** | **Download/Processed** | **Note** |
 | :------- |:-------|:------|:-----|:---------|:-----|:-----|:------|
@@ -27,6 +27,12 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | lncRNA | 136464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
 | mRNA | 19836 | 80,930 | Gencode27(protein_coding) | mRNA.gencode27.gtf / mRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
 | allGenes | 58,288 | 200,401 | Gencode27 | gencode.v27.annotation.gtf / gencode.v27.annotation.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
+
+## gtf/gff statistics
+
+| **RNA_type** | **source** | **file** | **Date** | **Download/Processed** | **Note** |
+| :------- |:-----|:---------|:-----|:-----|:------|
+| lncRNA | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.longest.exon.bin30.all.bed | 2018.5.4 | [P](#cut-lncRNA-into-bins) | |
 
 ## pre-process annotaion
 ### download gencode v27 annotations
