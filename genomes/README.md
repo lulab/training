@@ -16,7 +16,7 @@ Maintainer: Yang Li
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_27/GRCh38.p10.genome.fa.gz
 ```
 
-#### parse genome
+#### build genome index
 
 ```
 samtools faidx GRCh38.p10.genome.fa
