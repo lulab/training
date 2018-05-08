@@ -21,7 +21,7 @@ local: cnode:/BioII/lulab_b/shared/genomes/human_hg38/anno
 | snRNA | 1,900 | 1,900 | Gencode27 | snRNA.gencode27.gtf / snRNA.gencode27.gtf | 2018.5.4 | [P/P](#parse-annotations) ||
 | srpRNA | 680 | 680 | Gencode27(misc_RNA) | srpRNA.gencode27.gtf / srpRNA.gencode27.gff | 2018.5.4 | [P/P](#parse-annotations) ||
 | tRNA | 649 | 649 | Gencode27(predicted tRNA) | tRNA.gencode27.gtf / tRNA.gencode27.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
-| lncRNA | 15,778 | 27,908 | Gencode27(lincRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
+| lncRNA | 15,778 | 27,908 | Gencode27(lncRNA) | lncRNA.gencode27.gtf / lncRNA.gencode27.gff | 2018.5.4 | [D/D](#download-gencode-v27-annotations) ||
 | lncRNA | 96,308 | 172,216 | NONCODEv5 | lncRNA.NONCODEv5.hg38.gtf / lncRNA.NONCODEv5.hg38.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
 | lncRNA | 90,624 | 377,402 | mitranscritome | lncRNA.mitranscriptome.v2.hg38.gtf / lncRNA.mitranscriptome.v2.hg38.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
 | lncRNA | 136,464 | 541,901 | Gencode27+NONCODEv5+ MiTranscriptome+NC2017 | merged_lncRNA.combined.gtf / merged_lncRNA.combined.gff | 2018.5.4 | [P/P](#parse-and-convert) ||
