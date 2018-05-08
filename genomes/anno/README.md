@@ -85,11 +85,20 @@ wget https://media.nature.com/original/nature-assets/ncomms/2017/170213/ncomms14
 #### parse and convert
 ```
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/liftOver/hg19ToHg38.over.chain.gz
+
+# filter out lncRNA
+zcat mitranscriptome.v2.gtf.gz | grep -e 'tcat \"lncrna\"' > lncRNA.mitranscriptome.v2.gtf
 # liftOver hg19 to hg38
-gtfToGenePred -genePredExt mitranscriptome.v2.gtf mitranscriptome.v2.gp
-liftOver -genePred mitranscriptome.v2.gp hg19ToHg38.over.chain mitranscriptome.v2.hg38.gp unmapped.gtf
-genePredToGtf -utr -source=mitranscriptome file mitranscriptome.v2.hg38.gp lncRNA.mitranscriptome.v2.hg38.gtf
+gtfToGenePred -genePredExt lncRNA.mitranscriptome.v2.gtf lncRNA.mitranscriptome.v2.gp
+genePredToGtf -utr -source=mitranscriptome file lncRNA.mitranscriptome.v2.gp lncRNA.mitranscriptome.v2.hg38.gtf
 gffread -E lncRNA.mitranscriptome.v2.hg38.gtf -o- > lncRNA.mitranscriptome.v2.hg38.gff
+
+# filter out tucp
+zcat mitranscriptome.v2.gtf.gz | grep -e 'tcat \"tucp\"' > tucp.mitranscriptome.v2.gtf
+# liftOver hg19 to hg38
+gtfToGenePred -genePredExt tucp.mitranscriptome.v2.gtf tucp.mitranscriptome.v2.gp
+genePredToGtf -utr -source=mitranscriptome file tucp.mitranscriptome.v2.gp tucp.mitranscriptome.v2.hg38.gtf
+gffread -E tucp.mitranscriptome.v2.hg38.gtf -o- > tucp.mitranscriptome.v2.hg38.gff
 
 gtfToGenePred -genePredExt ncomms14421-s3.txt lncRNA.lulab_ncomms14421.gp
 liftOver -genePred lncRNA.lulab_ncomms14421.gp hg19ToHg38.over.chain lncRNA.lulab_ncomms14421.hg38.gp unmapped.gtf
