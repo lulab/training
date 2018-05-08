@@ -113,7 +113,7 @@ mv NONCODEv5_human_hg38_lncRNA.gtf lncRNA.NONCODEv5.hg38.gtf
 ### merge lncRNA annotations
 
 ```
-gffcompare -o merged_lncRNA -s ../sequence/GRCh38.p12.genome.fa lncRNA.NONCODEv5.hg38.gtf  lncRNA.mitranscriptome.v2.hg38.gtf  lncRNA.gencode27.gtf lncRNA.lulab_ncomms14421.hg38.gtf
+gffcompare -o merged_lncRNA -s ../sequence/GRCh38.p10.genome.fa lncRNA.NONCODEv5.hg38.gtf  lncRNA.mitranscriptome.v2.hg38.gtf  lncRNA.gencode27.gtf lncRNA.lulab_ncomms14421.hg38.gtf
 gffread -E merged_lncRNA.combined.gtf -o- > merged_lncRNA.combined.gff
 ```
 
