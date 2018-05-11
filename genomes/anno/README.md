@@ -94,7 +94,7 @@ genePredToGtf -utr -source=mitranscriptome file mitranscriptome.v2.hg38.gp mitra
 gffread -E mitranscriptome.v2.hg38.gtf -o- > mitranscriptome.v2.hg38.gff
 
 # filter out lncRNA
-zcat mitranscriptome.v2.gtf.gz | grep -e 'tcat \"lncrna\"' > lncRNA.mitranscriptome.v2.gtf
+zcat mitranscriptome.v2.gtf.gz | grep -e 'tcat \"lncrna\"' | awk '$7!="."' > lncRNA.mitranscriptome.v2.gtf
 # liftOver hg19 to hg38
 gtfToGenePred -genePredExt lncRNA.mitranscriptome.v2.gtf lncRNA.mitranscriptome.v2.gp
 liftOver -genePred lncRNA.mitranscriptome.v2.gp hg19ToHg38.over.chain lncRNA.mitranscriptome.v2.hg38.gp unmapped.gtf
