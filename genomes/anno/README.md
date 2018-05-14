@@ -153,7 +153,7 @@ merged_lncRNA.combined.longest.exon.gtf |awk '$3>$2' >merged_lncRNA.combined.lon
 #### (2)deal with transcirpts no longer than 30bp
 ```
 awk 'BEGIN{ OFS="\t" } ($5-$4)<=30 {split($10,a,"\"");print $1,$4,$5,a[2]"__"$4"__"$5,$6,$7}' \
-merged_lncRNA.combined.longest.exon.gtf >shorterthan30.bed
+merged_lncRNA.combined.longest.exon.gtf | awk '$3>$2' >shorterthan30.bed
 ```
 #### (3)concatenate two bed files generated abovely
 ```
