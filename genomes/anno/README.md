@@ -158,4 +158,6 @@ merged_lncRNA.combined.longest.exon.gtf >shorterthan30.bed
 #### (3)concatenate two bed files generated abovely
 ```
 cat merged_lncRNA.combined.longest.exon.bin30.bed shorterthan30.bed|sort -k1,1 -k2,2n -k3,3 > merged_lncRNA.combined.longest.exon.bin30.all.bed
+awk 'BEGIN{FS=OFS="\t"}{print $1,$2,$3,$4,1,$6}' merged_lncRNA.combined.longest.exon.bin30.all.bed > foo
+bedToGenePred foo /dev/stdout | genePredToGtf -source=merged_lncRNA_bin file /dev/stdin merged_lncRNA.combined.longest.exon.bin30.all.gtf
 ```
