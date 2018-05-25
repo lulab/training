@@ -78,14 +78,14 @@ table(filter_genes)
 rowData(reads_NvsEachStage)$use <- filter_genes
 dim(reads_NvsEachStage[rowData(reads_NvsEachStage)$use, colData(reads_NvsEachStage)$use])
 
-# save the data
-saveRDS(reads_NvsEachStage, file = "GSE71008.reads_NvsEachStage.clean.rds")
-
 # visualization
 # log2 transfer
 assay(reads_NvsEachStage, "logcounts_raw") <- log2(counts(reads_NvsEachStage) + 1)
 reads_NvsEachStage.qc <- reads_NvsEachStage[rowData(reads_NvsEachStage)$use, colData(reads_NvsEachStage)$use]
 
+# save the data
+saveRDS(reads_NvsEachStage.qc, file = "GSE71008.reads_NvsEachStage.clean.rds")                      
+                      
 # Before QC
 endog_genes <- !rowData(reads_NvsEachStage)$is_feature_control
 plotPCA(
