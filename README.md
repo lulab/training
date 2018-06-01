@@ -1,9 +1,10 @@
 # Bioinfo Training Program @ [Lu Lab](https://lulab.github.io)
 
-## 📖 [Tutorial](https://lulab.gitbook.io/training)
+## 📖 [Tutorial](https://lulab.gitbook.io/training) 📖
 
 * ✅ [to-do](https://github.com/lulab/training/projects/1?fullscreen=true)
 * ❗️ [issues](https://github.com/lulab/training/issues)
+* 📖 [Additional Tutorial](https://youngleebbs.gitbook.io/bioinfo-training)
 
 ## Scripts and Documents for the training program
 
