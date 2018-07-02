@@ -1,0 +1,72 @@
+#global settings
+shell.prefix("set -o pipefail; ")
+shell.prefix("set -e; ")
+shell.prefix("set -u; ")
+localrules: all
+configfile: "config.json"
+
+
+
+rule all:
+        input:
+                #expand("00.hg38/{sample}.hg38.bam",sample=config["sample"]),
+                #expand("00.hg38/{sample}.hg38.reads.list",sample=config["sample"]),
+                #expand("00.hg38/{sample}.hg38.reads.name",sample=config["sample"]),
+                #expand("01.count/{sample}.{type}.count",sample=config["sample"],type=config["type"]),
+                #expand("02.matrix/{sample}.all.mx", sample=config["sample"]),
+                expand("02.hg38/{sample}.hg38.length.mx",sample=config["sample"])
+
+rule bowtie2_mapping_hg38:
+        input:
+                fastq_1 = "/BioII/lulab_b/younglee/exRNA/hcc_lulab/01.preprocess/{sample}.cutadapt.fastq",
+                type_list = "/Share/home/caojingyi/exRNA/process/anno/gtf/tran_list/all_tans_type_list"
+        output:
+                bam = "00.hg38/{sample}.hg38.bam",
+                reads_list = "00.hg38/{sample}.hg38.reads.list",
+                reads_name = "00.hg38/{sample}.hg38.reads.name"
+        threads: config["Remove_rRNA"]["cpu"]
+        params:
+                jobname = "{sample}.bowtie2_mapping_hg38",
+                index = config["References"]["bowtie2_hg38_genome_index_dir"],
+        shell:
+                r"""
+                bowtie2 -p {threads} --sensitive-local --no-unal -k 8  -x {params.index} -U {input.fastq_1} |tee >(samtools view -S -b - > {output.bam}) >(awk '!/^@/ {{print $1}}' |uniq > {output.reads_name}) |awk 'NR==FNR {{D[$1]=$2}} NR>FNR&&(!/^@/)&&D[$2]  {{print $1 "\t" $3 "\t" D[$2]}}' {input.type_list} - >{output.reads_list}
+                """
+
+rule count:
+        input:
+                reads_list = "00.hg38/{sample}.hg38.reads.list",
+                reads_name = "00.hg38/{sample}.hg38.reads.name",
+        output:
+                count = "01.count/{sample}.{type}.count"
+        params:
+                jobname ="{sample}.{type}.count"
+        shell:
+                r"""
+                awk -v g={wildcards.type} 'NR==FNR&&$2==g {{D[$1]++}} NR>FNR {{if(D[$1]) print $1 "\t" D[$1];else print $1 "\t0"}}' {input.reads_list} {input.reads_name} > {output.count}
+                """
+
+rule merge:
+        input:
+                lambda wildcards: expand("01.count/{sample}.{type}.count", sample=wildcards.sample, type=config["type"])
+        output:  
+                table = "02.matrix/{sample}.all.mx"
+        params:
+                jobname = "{sample}.matrix"
+        shell:
+                r"""
+                paste -d "\t" {input} |awk '{{printf $1 "\t";for(i=2;i<=NF;i+=2) printf $i "\t";printf "\n"}}' > {output}
+                """
+rule length:
+        input:
+                bam = "00.hg38/{sample}.hg38.bam",
+                reads_name = "00.hg38/{sample}.hg38.reads.name",
+                table = "02.matrix/{sample}.all.mx"
+        output:
+                length = "02.hg38/{sample}.hg38.length.mx"
+        params:
+                jobname = "{sample}.length"
+        shell:
+                r"""
+                samtools view {input.bam} |awk 'NR==FNR {{D[$1]=length($10)}} NR>FNR&&D[$1]  {{print D[$1]}}' - {input.reads_name} |paste -d "\t" - <(cut -f2- {input.table} ) >{output.length}
+                """
