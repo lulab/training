@@ -1,4 +1,4 @@
-此处仅包含jupyter文件，其余需要的数据分享在[清华云盘](https://cloud.tsinghua.edu.cn/d/dddd2065df0a492fb612/)
+此处仅包含jupyter文件，其余需要的数据分享在[清华云盘]
 
 文件夹包含emaize_tutorial需要的所有代码、数据，用jupyter notebook打开jupyter_notebook/emaize_tutorial.ipynb，按照指南逐步运行代码即可。
 
