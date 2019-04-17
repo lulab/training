@@ -1,4 +1,4 @@
-# Bioinfo Training Program @ [Lu Lab](https://lulab.github.io)
+# Bioinfo Training @ Lu Lab -- 2018
 
 ## 📖 Tutorial 📖
 
